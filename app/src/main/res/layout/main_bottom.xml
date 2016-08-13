@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="58dp"
+    android:orientation="vertical">
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/product_detail_common"></View>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="57dp"
+        android:background="@color/white"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:id="@+id/ll_main_home"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:paddingTop="3dp">
+
+            <ImageView
+                android:id="@+id/iv_main_home"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:src="@drawable/bid02" />
+
+            <TextView
+                android:id="@+id/tv_main_home"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="3dp"
+                android:text="首页"
+                android:textSize="16sp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/ll_main_invest"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:paddingTop="3dp">
+
+            <ImageView
+                android:id="@+id/iv_main_invest"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:src="@drawable/bid04" />
+
+            <TextView
+                android:id="@+id/tv_main_invest"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="3dp"
+                android:text="投资"
+                android:textSize="16sp"
+
+                />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/ll_main_me"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:paddingTop="3dp">
+
+            <ImageView
+                android:id="@+id/iv_main_me"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:src="@drawable/bid06" />
+
+            <TextView
+                android:id="@+id/tv_main_me"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="3dp"
+                android:text="我的资产"
+                android:textSize="16sp"
+
+                />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/ll_main_more"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:paddingTop="3dp">
+
+            <ImageView
+                android:id="@+id/iv_main_more"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:src="@drawable/bid08" />
+
+            <TextView
+                android:id="@+id/tv_main_more"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="3dp"
+                android:text="更多"
+                android:textSize="16sp" />
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+</LinearLayout>
