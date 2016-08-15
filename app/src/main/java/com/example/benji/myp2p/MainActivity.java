@@ -11,6 +11,7 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import com.example.benji.myp2p.common.AppManager;
 import com.example.benji.myp2p.fragment.HomeFragment;
 import com.example.benji.myp2p.fragment.InvestFragment;
 import com.example.benji.myp2p.fragment.MoreFragment;
@@ -59,12 +60,19 @@ public class MainActivity extends FragmentActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         ButterKnife.bind(this);//这句是和mainactivity进行数据绑定
         //程序一打开便显示主页面，同时在初始化布局的时候也可以在这个方法中执行
+
         initData();
+        //将当前的Activity添加到栈管理中
+        AppManager.getInstance().addActivity(this);
+
     }
+
+
 
     private void initData() {
         //显示主页面
@@ -128,20 +136,20 @@ public class MainActivity extends FragmentActivity {
 
     private void selectTab(int i) {
         switch (i) {
-            case 0 :
+            case 0:
 
                 ivMainHome.setImageResource(R.drawable.bid01);
                 tvMainHome.setTextColor(getResources().getColor(R.color.home_back_selected));
                 break;
-            case 1 :
+            case 1:
                 ivMainInvest.setImageResource(R.drawable.bid03);
                 tvMainInvest.setTextColor(getResources().getColor(R.color.home_back_selected));
                 break;
-            case 2 :
+            case 2:
                 ivMainMe.setImageResource(R.drawable.bid05);
                 tvMainMe.setTextColor(getResources().getColor(R.color.home_back_selected));
                 break;
-            case 3 :
+            case 3:
                 ivMainMore.setImageResource(R.drawable.bid07);
                 tvMainMore.setTextColor(getResources().getColor(R.color.home_back_selected));
                 break;
@@ -150,37 +158,37 @@ public class MainActivity extends FragmentActivity {
 
     private void switchToFragment(int i) {
         FragmentManager fragmentManager = getSupportFragmentManager();
-         transaction = fragmentManager.beginTransaction();
+        transaction = fragmentManager.beginTransaction();
         //隐藏所有的布局
         hideAllFragment();
-        switch (i){
+        switch (i) {
             case 0:
-                if(homeFragment==null) {
+                if (homeFragment == null) {
                     homeFragment = new HomeFragment();
-                    transaction.add(R.id.fl_main_framlayout,homeFragment);
+                    transaction.add(R.id.fl_main_framlayout, homeFragment);
                 }
                 //如果已经存在了直接将原来隐藏的fragment显示就好了
                 showFragment(0);
                 break;
             case 1:
-                if(investFragment==null) {
+                if (investFragment == null) {
                     investFragment = new InvestFragment();
-                    transaction.add(R.id.fl_main_framlayout,investFragment);
+                    transaction.add(R.id.fl_main_framlayout, investFragment);
                 }
                 showFragment(1);
                 break;
             case 2:
-                if(myvalueFragment==null) {
+                if (myvalueFragment == null) {
                     myvalueFragment = new MyvalueFragment();
-                    transaction.add(R.id.fl_main_framlayout,myvalueFragment);
+                    transaction.add(R.id.fl_main_framlayout, myvalueFragment);
                 }
                 showFragment(2);
                 break;
             case 3:
 
-                if(moreFragment==null) {
-                     moreFragment = new MoreFragment();
-                    transaction.add(R.id.fl_main_framlayout,moreFragment);
+                if (moreFragment == null) {
+                    moreFragment = new MoreFragment();
+                    transaction.add(R.id.fl_main_framlayout, moreFragment);
                 }
                 showFragment(3);
                 break;
@@ -189,15 +197,16 @@ public class MainActivity extends FragmentActivity {
     }
 
     private void hideAllFragment() {
-        if(homeFragment!=null){
+        if (homeFragment != null) {
             transaction.hide(homeFragment);
         }
-        if(investFragment!=null){
+        if (investFragment != null) {
             transaction.hide(investFragment);
         }
-        if(myvalueFragment!=null){
+        if (myvalueFragment != null) {
             transaction.hide(myvalueFragment);
-        }if(moreFragment!=null){
+        }
+        if (moreFragment != null) {
             transaction.hide(moreFragment);
         }
     }
@@ -205,16 +214,16 @@ public class MainActivity extends FragmentActivity {
     //显示
     private void showFragment(int i) {
         switch (i) {
-            case  0:
+            case 0:
                 transaction.show(homeFragment);
                 break;
-            case  1:
+            case 1:
                 transaction.show(investFragment);
                 break;
-            case  2:
+            case 2:
                 transaction.show(myvalueFragment);
                 break;
-            case  3:
+            case 3:
                 transaction.show(moreFragment);
                 break;
         }
