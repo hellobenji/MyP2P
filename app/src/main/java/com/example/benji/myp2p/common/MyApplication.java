@@ -3,7 +3,6 @@ package com.example.benji.myp2p.common;
 import android.app.Application;
 import android.content.Context;
 import android.os.Handler;
-import android.util.Log;
 
 /**
  * Created by benji on 2016/8/13.
@@ -19,10 +18,9 @@ public class MyApplication extends Application {
     @Override
     public void onCreate() {
         super.onCreate();
-        //初始化异常管理类
+        /*//初始化异常管理类
         CrashHandler.getInstance().init(this);
-
-        Log.e("TAG", "MyApplication onCreate()异常管理类已经初始化l");
+        Log.e("TAG", "MyApplication onCreate()异常管理类已经初始化l");*/
 
         context = getApplicationContext();
         handler = new Handler();
